@@ -2,11 +2,10 @@ import java.awt.*;
 
 public class Cartransporter extends TruckWithFlatbed{
     Loadable loadedCars;
-    FlatbedWithRamp cartransporterFlatbed;
+    private FlatbedWithRamp cartransporterFlatbed;
 
     public Cartransporter(){
         super(2,70, Color.yellow, "Cartransporter");
-            flatbedFastened = true;
             loadedCars = new Loadable(6);
             cartransporterFlatbed = new FlatbedWithRamp();
         }

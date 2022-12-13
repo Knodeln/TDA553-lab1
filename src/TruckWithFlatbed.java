@@ -1,7 +1,11 @@
 import java.awt.*;
 
 abstract class TruckWithFlatbed extends Truck {
-    boolean flatbedFastened;
+    private boolean flatbedFastened;
+
+    public boolean isFlatbedFastened() {
+        return flatbedFastened;
+    }
 
     public TruckWithFlatbed(int nrDoors, double enginePower, Color color, String modelName) {
         super(nrDoors, enginePower, color, modelName);
