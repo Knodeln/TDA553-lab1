@@ -13,13 +13,13 @@ abstract class TruckWithFlatbed extends Truck {
     }
 
     @Override
-    public void incrementSpeed(double amount) {
-        if (flatbedFastened == true) {
-            if (this.getCurrentSpeed() < this.getEnginePower()) {
-                this.setCurrentSpeed(this.getCurrentSpeed() + this.speedFactor() * amount);
-            }
+    public void startEngine() {
+        if (flatbedFastened) {
+            isEngineOn = true;
         }
     }
+    
+
     public void setFlatbedFastened(boolean inBoolean) {
         flatbedFastened = inBoolean;
     }

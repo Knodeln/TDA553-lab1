@@ -14,11 +14,15 @@ public class Cartransporter extends TruckWithFlatbed{
     // }
 
     public void loadCar(Car car){
-       loadedCars.loadCar(car,getX(),getY());
+        if (getCurrentSpeed() == 0 && isFlatbedFastened() == false){
+            loadedCars.loadCar(car,getX(),getY());
+        }   
     }
 
     public void unloadLatestCar(){
-      loadedCars.unloadLatestCar(getX(),getY());
+        if (getCurrentSpeed() == 0) {
+            loadedCars.unloadLatestCar(getX(),getY());
+        }
     }
 
     public void lowerFlatbed() {

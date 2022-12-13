@@ -9,7 +9,7 @@ abstract class Vehicle implements Movable{
     private String modelName;
    
 
-    private boolean isEngineOn;
+    protected boolean isEngineOn;
 
     private double x;
     private double y;
@@ -68,14 +68,14 @@ abstract class Vehicle implements Movable{
         this.isEngineOn = false;
     }
     
-    public void incrementSpeed(double amount){
+    protected void incrementSpeed(double amount){
         this.currentSpeed = this.getCurrentSpeed() + this.speedFactor() * amount;
         if (this.currentSpeed > this.getEnginePower()){
             this.currentSpeed = this.getEnginePower();
         }
     }
 
-    public void decrementSpeed(double amount){
+    protected void decrementSpeed(double amount){
         this.currentSpeed = this.getCurrentSpeed() - this.speedFactor() * amount;
         if (this.currentSpeed < 0){
             this.currentSpeed = 0;
